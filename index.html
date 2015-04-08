@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="language" content="DE">
+	
+	<meta name="author" content="Damien Antipa">
+	<meta name="robots" content="index, follow">
+	<meta name="description" content="">
+	<meta name="keywords" content="Gas, Wasser, Heizung, Gasgeräte Kundendienst, Wärmepumpen">
+	<meta name="copyright" content="Günter Kratky">
+
+
+	<meta name="Classification" content="Business">
+
+	<meta name="fb:page_id" content="" />
+
+	<meta name="og:email" content="kratkygmbh@liwest.at"/>
+	<meta name="og:phone_number" content="+43 732 739786"/>
+	<meta name="og:latitude" content="48.312199"/>
+	<meta name="og:longitude" content="14.281201"/>
+	<meta name="og:street-address" content="Kaarstr 7"/>
+	<meta name="og:locality" content="Linz"/>
+	<meta name="og:region" content="Oberoesterreich"/>
+	<meta name="og:postal-code" content="4040"/>
+	<meta name="og:country-name" content="Austria"/>
+
+	<title>Kratky Ihr Installateur</title>
+
+	<link rel="icon" href="" type="image/png">
+	<link rel="profile" href="http://microformats.org/profile/hcard">
+
+	<style>
+		html {
+			overflow: hidden;
+		}
+
+		body {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			
+			overflow: hidden;
+			padding: 0;
+			margin: 0;
+		}
+
+		@font-face {
+		  font-family: 'Source Sans Pro';
+		  font-style: normal;
+		  font-weight: 400;
+		  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlJbPFduIYtoLzwST68uhz_Y.woff2) format('woff2');
+		  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+		}
+
+
+		.u-kratky-blendin {
+			-webkit-transition: opacity 2s ease-in;  
+		   	-moz-transition: opacity 2s ease-in;  
+		   	-o-transition: opacity 2s ease-in;  
+		   	transition: opacity 2s ease-in;
+		}
+
+		.is-hidden {
+			display: none !important;
+		}
+
+		.kratky-Header {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+
+			padding: 0 10px;
+			height: 50px;
+
+			line-height: 50px;
+
+			background-color: rgb(255, 255, 255);
+			border-bottom: 1px solid rgba(50, 50, 50, 0.6);
+		}
+
+		.kratky-Header-nav {
+			
+		}
+
+		.kratky-Header-nav-left {
+			display: inline-block;
+			-ms-transform: translate(-110px, 0);
+		   	-webkit-transform: translate(-110px, 0);
+		    transform: translate(-110px, 0);
+		}
+
+		.kratky-Header-nav-right {
+			display: inline-block;
+			float: right;
+		}
+
+		.kratky-Header-item {
+			color: #4b4b4b;
+		    font-family: 'Source Sans Pro', sans-serif;
+		    font-size: 110%;
+		    text-decoration: none;
+
+		    height: 50px;
+		    line-height: 50px;
+		    margin: 0 10px;
+
+		    display: inline-block;
+		    float: left;
+		}
+
+		.kratky-Header-item--home {
+			padding-top: 5px;
+		}
+
+		.kratky-Header-item--phone {
+			float: right;
+		}
+
+		.kratky-Page {
+			position: absolute;
+			top: 50px;
+			right: 0;
+			left: 0;
+			bottom: 0;
+		}
+
+		.kratky-Page-layer {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+		}
+
+		.kratky-Home {
+			display: table;
+			width: 100%;
+			height: 100%;
+		}
+
+		.kratky-Home-center {
+			display:table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+
+		.kratky-Logo {
+			width: 40%;
+			margin-top: -50px;
+
+			transition: transform 0.5s ease;
+			-webkit-transition: -webkit-transform 0.5s ease;
+			-moz-transition: -moz-transform 0.5s ease;
+		}
+
+		.kratky-Logo:hover {
+			-ms-transform: scale(1.1);
+		   	-webkit-transform: scale(1.1);
+		    transform: scale(1.1);
+		}
+
+		.kratky-Maps {
+			height: 100%;
+  			width: 100%;
+		}
+
+		.kratky-Footer {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 10px;
+
+		    color: #4b4b4b;
+		    font-family: 'Source Sans Pro', sans-serif;
+		    font-size: 90%;
+		    
+		    text-align: center;
+		    width: 100%;
+		}
+
+		.kratky-Footer-item {
+			white-space: nowrap;
+		}
+
+		.kratky-Footer-item:nth-last-child(n+2)::after {
+			content: "\2219";
+		}
+	</style>
+</head>
+<body lang="de-AT">
+
+	<header class="kratky-Header">
+		<nav class="kratky-Header-nav">
+			<span class="kratky-Header-nav-left">
+				<a href="#" class="kratky-Header-item kratky-Header-item--home">
+					<img src="res/logo.png" height="40" alt="Unternehmenslogo von Kratky Ihr Installateur"/>
+				</a>
+				<a href="#" class="kratky-Header-item" onclick="kratky.tempShowMap()">Anfahrt</a>
+				<a href="#" class="kratky-Header-item">Kontakt</a>
+			</span>
+			<span class="kratky-Header-nav-right">
+				<span class="kratky-Header-item kratky-Header-item--phone">
+					<img src="res/icon-call.png" height="12" alt=""/>
+					0732 739786
+				</span>
+			</span>
+		</nav>
+	</header>
+
+	<div class="kratky-Page">
+		<section class="kratky-Home kratky-Page-layer">
+			<div class="kratky-Home-center">
+				<script>
+				(function() {
+					var e, div = document.createElement('div');
+					div.setAttribute('style', 'transition:top 1s ease;-webkit-transition:top 1s ease;-moz-transition:top 1s ease;');
+					var support = !!(div.style.transition || div.style.webkitTransition || div.style.MozTransition);
+
+					if (support) {
+						e = document.getElementsByClassName('kratky-Home-center')[0];
+						e.style.opacity = '0';
+						setTimeout(function() {
+							var classList = e.getAttribute('class');
+							e.setAttribute('class', classList + ' u-kratky-blendin');
+							e.style.opacity = '1';
+						}, 300);	
+					}
+				})();
+			</script>
+				<img class="kratky-Logo" src="res/logo.png" alt="Unternehmenslogo von Kratky Ihr Installateur">
+			</div>
+			<footer class="kratky-Footer vcard">
+				<span class="kratky-Footer-item fn org">Günter Kratky GmbH</span> 
+				<span class="kratky-Footer-item adr">Kaarstr 7, 4040 Linz, Österreich</span>
+				<span class="kratky-Footer-item tel">(0) 732 739786</span>
+				<span class="kratky-Footer-item email">kratkygmbh@liwest.at</span>
+			</footer>
+		</section>
+
+		<section class="kratky-Maps kratky-Page-layer">
+
+		</section>
+	</div>
+
+	<script src="res/move.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script type="text/javascript">
+		(function () {
+
+			if (typeof window.Element === "undefined" || "classList" in document.documentElement) return;
+
+			var prototype = Array.prototype,
+			    push = prototype.push,
+			    splice = prototype.splice,
+			    join = prototype.join;
+
+			function DOMTokenList(el) {
+			  this.el = el;
+			  // The className needs to be trimmed and split on whitespace
+			  // to retrieve a list of classes.
+			  var classes = el.className.replace(/^\s+|\s+$/g,'').split(/\s+/);
+			  for (var i = 0; i < classes.length; i++) {
+			    push.call(this, classes[i]);
+			  }
+			};
+
+			DOMTokenList.prototype = {
+			  add: function(token) {
+			    if(this.contains(token)) return;
+			    push.call(this, token);
+			    this.el.className = this.toString();
+			  },
+			  contains: function(token) {
+			    return this.el.className.indexOf(token) != -1;
+			  },
+			  item: function(index) {
+			    return this[index] || null;
+			  },
+			  remove: function(token) {
+			    if (!this.contains(token)) return;
+			    for (var i = 0; i < this.length; i++) {
+			      if (this[i] == token) break;
+			    }
+			    splice.call(this, i, 1);
+			    this.el.className = this.toString();
+			  },
+			  toString: function() {
+			    return join.call(this, ' ');
+			  },
+			  toggle: function(token) {
+			    if (!this.contains(token)) {
+			      this.add(token);
+			    } else {
+			      this.remove(token);
+			    }
+
+			    return this.contains(token);
+			  }
+			};
+
+			window.DOMTokenList = DOMTokenList;
+
+			function defineElementGetter (obj, prop, getter) {
+			    if (Object.defineProperty) {
+			        Object.defineProperty(obj, prop,{
+			            get : getter
+			        });
+			    } else {
+			        obj.__defineGetter__(prop, getter);
+			    }
+			}
+
+			defineElementGetter(Element.prototype, 'classList', function () {
+			  return new DOMTokenList(this);
+			});
+
+			})();
+	</script>
+	<script>
+	(function (){
+		var k = window.kratky = {};
+
+		k.tempShowMap = function () {
+			k.toggleHomeButton();
+			k.showMap();
+
+
+		};
+
+		k.toggleHomeButton = function () {
+			move('.kratky-Header-nav-left')
+			  .to(0, 0)
+			  .duration('0.5s')
+			  .end();
+		};
+
+		k.showMap = function () {
+		    var mapCanvas = document.getElementsByClassName('kratky-Maps')[0];
+		    var businessPos = new google.maps.LatLng(48.312199, 14.281201);
+		    var map = new google.maps.Map(mapCanvas, {
+		      center: businessPos,
+		      zoom: 16,
+		      mapTypeId: google.maps.MapTypeId.ROADMAP
+		    });
+
+		    var marker = new google.maps.Marker({
+				position: businessPos,
+				map: map,
+				title: 'Kratky Ihr Installateur'
+			});
+
+		    var directionsDisplay = new google.maps.DirectionsRenderer();
+		    directionsDisplay.setMap(map);
+		};
+		
+	}());
+	</script>
+</body>
+</html>
