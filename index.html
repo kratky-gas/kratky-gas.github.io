@@ -7,14 +7,12 @@
 	
 	<meta name="author" content="Damien Antipa">
 	<meta name="robots" content="index, follow">
-	<meta name="description" content="">
+	<meta name="description" content="Kratky, ihr Installateur aus Linz für Gas, Wasser, Heizung und Wärmepumpen">
 	<meta name="keywords" content="Gas, Wasser, Heizung, Gasgeräte Kundendienst, Wärmepumpen">
 	<meta name="copyright" content="Günter Kratky">
 
 
 	<meta name="Classification" content="Business">
-
-	<meta name="fb:page_id" content="" />
 
 	<meta name="og:email" content="kratkygmbh@liwest.at"/>
 	<meta name="og:phone_number" content="+43 732 739786"/>
@@ -56,11 +54,9 @@
 		  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 		}
 
-
 		.u-kratky-blendin {
 			-webkit-transition: opacity 2s ease-in;  
 		   	-moz-transition: opacity 2s ease-in;  
-		   	-o-transition: opacity 2s ease-in;  
 		   	transition: opacity 2s ease-in;
 		}
 
@@ -81,6 +77,8 @@
 
 			background-color: rgb(255, 255, 255);
 			border-bottom: 1px solid rgba(50, 50, 50, 0.6);
+
+			z-index: 1;
 		}
 
 		.kratky-Header-nav {
@@ -89,9 +87,18 @@
 
 		.kratky-Header-nav-left {
 			display: inline-block;
-			-ms-transform: translate(-110px, 0);
-		   	-webkit-transform: translate(-110px, 0);
-		    transform: translate(-110px, 0);
+			-webkit-transition: -webkit-transform 0.5s ease-in;  
+		   	-moz-transition: -moz-transform 0.5s ease-in;  
+		   	transition: transform 0.5s ease-in;
+			-ms-transform: translate(-130px, 0);
+		   	-webkit-transform: translate(-130px, 0);
+		    transform: translate(-130px, 0);
+		}
+
+		.kratky-Header-nav-left--showHome {
+			-ms-transform: translate(0, 0);
+		   	-webkit-transform: translate(0, 0);
+		    transform: translate(0, 0);
 		}
 
 		.kratky-Header-nav-right {
@@ -107,10 +114,20 @@
 
 		    height: 50px;
 		    line-height: 50px;
-		    margin: 0 10px;
+		    margin: 0 20px;
 
 		    display: inline-block;
 		    float: left;
+
+		    transition: transform 0.2s ease;
+			-webkit-transition: -webkit-transform 0.2s ease;
+			-moz-transition: -moz-transform 0.2s ease;
+		}
+
+		.kratky-Header-item:hover {
+			-ms-transform: scale(1.1);
+		   	-webkit-transform: scale(1.1);
+		    transform: scale(1.1);
 		}
 
 		.kratky-Header-item--home {
@@ -147,6 +164,12 @@
 			display:table-cell;
 			vertical-align: middle;
 			text-align: center;
+		}
+
+		.kratky-Home-subtitle {
+			font-family: 'Source Sans Pro', sans-serif;
+			margin-top: 40px;
+			line-height: 20px;
 		}
 
 		.kratky-Logo {
@@ -197,11 +220,10 @@
 	<header class="kratky-Header">
 		<nav class="kratky-Header-nav">
 			<span class="kratky-Header-nav-left">
-				<a href="#" class="kratky-Header-item kratky-Header-item--home">
+				<a href="#" class="kratky-Header-item kratky-Header-item--home" onclick="kratky.showHomeLayer()">
 					<img src="res/logo.png" height="40" alt="Unternehmenslogo von Kratky Ihr Installateur"/>
 				</a>
-				<a href="#" class="kratky-Header-item" onclick="kratky.tempShowMap()">Anfahrt</a>
-				<a href="#" class="kratky-Header-item">Kontakt</a>
+				<a href="#" class="kratky-Header-item" onclick="kratky.showMapLayer()">Anfahrt</a>
 			</span>
 			<span class="kratky-Header-nav-right">
 				<span class="kratky-Header-item kratky-Header-item--phone">
@@ -233,6 +255,7 @@
 				})();
 			</script>
 				<img class="kratky-Logo" src="res/logo.png" alt="Unternehmenslogo von Kratky Ihr Installateur">
+				<div class="kratky-Home-subtitle"><strong>Gas - Wasser - Heizung - Gasgeräte Kundendienst - Wärmepumpen</strong><br/>Wir arbeiten gerade an einer neuen Webseite</div>
 			</div>
 			<footer class="kratky-Footer vcard">
 				<span class="kratky-Footer-item fn org">Günter Kratky GmbH</span> 
@@ -242,12 +265,10 @@
 			</footer>
 		</section>
 
-		<section class="kratky-Maps kratky-Page-layer">
+		<section class="kratky-Maps kratky-Page-layer is-hidden">
 
 		</section>
 	</div>
-
-	<script src="res/move.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
 	<script type="text/javascript">
 		(function () {
@@ -325,21 +346,21 @@
 	(function (){
 		var k = window.kratky = {};
 
-		k.tempShowMap = function () {
-			k.toggleHomeButton();
-			k.showMap();
+		var homeLayer = document.getElementsByClassName('kratky-Home')[0];
+		var mapsLayer = document.getElementsByClassName('kratky-Maps')[0];
+		var navLeft = document.getElementsByClassName('kratky-Header-nav-left')[0];
 
-
+		k.showHomeLayer = function () {
+			navLeft.classList.remove('kratky-Header-nav-left--showHome');
+			homeLayer.classList.remove('is-hidden');
+			mapsLayer.classList.add('is-hidden');
 		};
 
-		k.toggleHomeButton = function () {
-			move('.kratky-Header-nav-left')
-			  .to(0, 0)
-			  .duration('0.5s')
-			  .end();
-		};
+		k.showMapLayer = function () {
+			navLeft.classList.add('kratky-Header-nav-left--showHome');
+			mapsLayer.classList.remove('is-hidden');
+			homeLayer.classList.add('is-hidden');
 
-		k.showMap = function () {
 		    var mapCanvas = document.getElementsByClassName('kratky-Maps')[0];
 		    var businessPos = new google.maps.LatLng(48.312199, 14.281201);
 		    var map = new google.maps.Map(mapCanvas, {
